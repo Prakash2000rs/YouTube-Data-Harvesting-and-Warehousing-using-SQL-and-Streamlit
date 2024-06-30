@@ -305,32 +305,34 @@ def main():
         channel_id = st.text_input("Enter your Channel ID", key='channel_id_input')
 
         if st.button('Get Channel Data', key='get_channel_data'):
-            if not channel_id:
-                st.warning("Please enter a Channel ID.")
-            else:
-                result_channel = get_channel_details(channel_id)
-                if result_channel:
-                    st.session_state.df_channel = pd.DataFrame([result_channel])
-                    st.write("Channel Details:")
-                    st.write(st.session_state.df_channel)
+            if channel_id:
+                with st.spinner("Fetching data from YouTube..."):
+                if not channel_id:
+                    st.warning("Please enter a Channel ID.")
                 else:
-                    st.warning("No channel details found.")
-                
-                result_video = get_video_info(channel_id)
-                if result_video:
-                    st.session_state.df_video = pd.DataFrame(result_video)
-                    st.write("Video Data:")
-                    st.write(st.session_state.df_video)
-                else:
-                    st.warning("No video data found.")
-
-                result_comment = get_comment_info(channel_id)
-                if result_comment:
-                    st.session_state.df_comment = pd.DataFrame(result_comment)
-                    st.write('Comment Data:')
-                    st.write(st.session_state.df_comment)
-                else:
-                    st.warning("No comment data found.")
+                    result_channel = get_channel_details(channel_id)
+                    if result_channel:
+                        st.session_state.df_channel = pd.DataFrame([result_channel])
+                        st.write("Channel Details:")
+                        st.write(st.session_state.df_channel)
+                    else:
+                        st.warning("No channel details found.")
+                    
+                    result_video = get_video_info(channel_id)
+                    if result_video:
+                        st.session_state.df_video = pd.DataFrame(result_video)
+                        st.write("Video Data:")
+                        st.write(st.session_state.df_video)
+                    else:
+                        st.warning("No video data found.")
+    
+                    result_comment = get_comment_info(channel_id)
+                    if result_comment:
+                        st.session_state.df_comment = pd.DataFrame(result_comment)
+                        st.write('Comment Data:')
+                        st.write(st.session_state.df_comment)
+                    else:
+                        st.warning("No comment data found.")
 
         if st.button('Convert data to MySQL', key='push_data_to_mysql'):
             if 'df_channel' in st.session_state and 'df_video' in st.session_state and 'df_comment' in st.session_state:
