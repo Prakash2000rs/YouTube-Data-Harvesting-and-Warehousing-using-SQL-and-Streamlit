@@ -4,31 +4,74 @@ LinkedIn :
 
 ![image](https://github.com/Prakash2000rs/YouTube-Data-Harvesting-and-Warehousing-using-SQL-and-Streamlit/assets/171836339/1f5558a7-45b9-4ba8-ad7c-6a3daee5ff44)
 
-Youtube-Data-Harvesting-And-Warehousing YouTube Data Harvesting and Warehousing is a project that intends to provide users with the ability to access and analyse data from numerous YouTube channels. SQL, and Streamlit are used in the project to develop a user-friendly application that allows users to retrieve, save, and query YouTube channel and video data.
+INTRODUCTION:
 
-TOOLS AND LIBRARIES USED: this project requires the following components:
+The YouTube Data Harvesting and Warehousing Project is designed to fetch data from YouTube using the Google API Client, store it in a MySQL database, and provide an interactive user interface for querying and visualizing the data using Streamlit.
 
-STREAMLIT: Streamlit library was used to create a user-friendly UI that enables users to interact with the programme and carry out data retrieval and analysis operations.
+TABLE OF CONTENTS:
 
-PYTHON: Python is a powerful programming language renowned for being easy to learn and understand. Python is the primary language employed in this project for the development of the complete application, including data retrieval, processing, analysis, and visualisation.
+Introduction Problem statement Features Technologies Used Installation Version Running of Installation Tools and Libraries Used Workflow
 
-GOOGLE API CLIENT: The googleapiclient library in Python facilitates the communication with different Google APIs. Its primary purpose in this project is to interact with YouTube's Data API v3, allowing the retrieval of essential information like channel details, video specifics, and comments. By utilizing googleapiclient, developers can easily access and manipulate YouTube's extensive data resources through code.
-MYSQL: MYSQL is an open-source, advanced, and highly scalable database management system (DBMS) known for its reliability and extensive features. It provides a platform for storing and managing structured data, offering support for various data types and advanced SQL capabilities.
+PROBLEM STATEMENT :
 
-YOUTUBE DATA SCRAPPING AND ITS ETHICAL PERSPECTIVE: When engaging in the scraping of YouTube content, it is crucial to approach it ethically and responsibly. Respecting YouTube's terms and conditions, obtaining appropriate authorization, and adhering to data protection regulations are fundamental considerations. The collected data must be handled responsibly, ensuring privacy, confidentiality, and preventing any form of misuse or misrepresentation. Furthermore, it is important to take into account the potential impact on the platform and its community, striving for a fair and sustainable scraping process. By following these ethical guidelines, we can uphold integrity while extracting valuable insights from YouTube data.
+Create a Streamlit application that allows users to access and analyze data from multiple YouTube channels. Extracting data using Youtube API and then Transforming it to a relational database like MySQL. For getting various info about youtube channels. FEATURES:
 
-REQUIRED LIBRARIES:
+Data Collection:
 
-1.googleapiclient.discovery
+Harvest data from YouTube channels and videos using the Google API Client. _Data Storage:
 
-2.streamlit
+Store the collected data in a MySQL database. Data Analysis:
 
-3.mysql.connector
+-Perform various analytical queries on the data.
 
-4.pandas
+Visualization:
 
-FEATURES: The following functions are available in the YouTube Data Harvesting and Warehousing application: Retrieval of channel and video data from YouTube using the YouTube API.
+Visualize the data using Streamlit. User Interface:
 
-Migration of data from the data lake to a SQL database for efficient querying and analysis.
+Interactive Streamlit interface for querying and viewing data. TECHNOLOGIES USED:
 
-Search and retrieval of data from the SQL database using different search options.
+1.Python
+
+2.MySQL
+
+3.YouTube Data API
+
+4.Streamlit
+
+5.Pandas
+
+INSTALLATION PACKAGES:
+
+*pip install google-api-python-client
+
+*pip install streamlit
+
+*pip install mysql.connector python
+
+*pip install streamlit
+
+TOOLS AND LIBRARIES USED:
+
+STREAMLIT:
+
+-Streamlit library was used to create a user-friendly UI. -It enables users to interact with the programme and carry out data retrieval and analysis operations.
+
+PYTHON:
+
+-Python is a high level programming language. -Python is the primary language employed in this project for the development of the complete application, including data retrieval, processing, analysis, and visualisation.
+
+GOOGLE API CLIENT:
+
+-The googleapiclient library communicat with different Google APIs.
+
+Google API is used to retrieve channel data,video data and comment data from Youtube. SQL (MySQL): -A relational database used as a data warehouse for storing migrated YouTube data. WORKFLOW:
+
+COLLECTION OF DATA:
+
+-Retreiving data from youtube channels using Youtube API key and gaining the information which we required from the channels.
+
+STORAGE OF DATA:
+
+-Once the information is gained it all the store in MySql database.Migration of data to a SQL database for efficient querying and analysis. Search and retrieval of data from the SQL database.Support for handling multiple YouTube channels and managing their data.
+
+STREAMLIT DASHBOARD: -The above mentioned all informations are to be described in the Streamlit Dashboard and its functionalities to provide a user friendly interactions to visulaize the data
