@@ -1,6 +1,6 @@
                     YOUTUBE DATA HARVESTING & WAREHOUSING USING SQL AND STREAMLIT
 
-LinkedIn : 
+LinkedIn : https://www.linkedin.com/posts/prakashram25122000_youtubeapi-dataharvesting-mysql-activity-7214133587216936960-Ff1n?utm_source=share&utm_medium=member_desktop
 
 ![image](https://github.com/Prakash2000rs/YouTube-Data-Harvesting-and-Warehousing-using-SQL-and-Streamlit/assets/171836339/1f5558a7-45b9-4ba8-ad7c-6a3daee5ff44)
 
