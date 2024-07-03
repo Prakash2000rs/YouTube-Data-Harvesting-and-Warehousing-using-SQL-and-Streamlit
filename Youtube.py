@@ -6,7 +6,7 @@ from datetime import datetime
 
 # Connect_YouTube API
 def api_connect():
-    api_key = "AIzaSyCDgYvlKP6weHjyOFzFjgle1s_f7Maikj8"  
+    api_key = "Your API KEY"  
     api_service_name = "youtube"
     api_version = "v3"
     youtube = build(api_service_name, api_version, developerKey=api_key)
@@ -241,19 +241,19 @@ def get_video_info(channel_id, max_results=1000):
     return video_data
 
 # Convert YouTube duration format (ISO 8601) to HH:MM:SS format
-def convert_duration(iso_duration):
-    duration = ""
-    duration_dict = {
-        'H': ' hours ',
-        'M': ' minutes ',
-        'S': ' seconds'
-    }
-    
-    for key in duration_dict.keys():
-        value = iso_duration.find(key)
-        if value != -1:
-            duration = duration + iso_duration[value-2:value] + duration_dict[key]
-    return duration
+def convert_duration(duration):
+    total_seconds = 0
+    time_str = duration.replace('PT', '')
+    if 'H' in time_str:
+        hours, time_str = time_str.split('H')
+        total_seconds += int(hours) * 3600
+    if 'M' in time_str:
+        minutes, time_str = time_str.split('M')
+        total_seconds += int(minutes) * 60
+    if 'S' in time_str:
+        seconds = time_str.split('S')[0]
+        total_seconds += int(seconds)
+    return f"{total_seconds // 3600:02}:{(total_seconds % 3600) // 60:02}:{total_seconds % 60:02}"
 
 # Collecting Comment details from YouTube API
 def get_comment_info(channel_id):
